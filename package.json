@@ -1,0 +1,11 @@
+{
+  "name": "molecule-examples",
+  "version": "0.0.9",
+  "main": "index.js",
+  "repository": "git@github.com:DTStack/molecule-examples.git",
+  "author": "DTStack",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
