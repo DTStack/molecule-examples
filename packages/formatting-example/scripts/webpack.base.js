@@ -76,7 +76,7 @@ module.exports = {
                                 '@link-color': 'var(--textLink-foreground)',
                                 '@border-radius-base': '0px',
                                 '@blue-6': 'var(--button-background)',
-                                '@btn-primary-bg': 'var(--button-background)'
+                                '@btn-primary-bg': 'var(--button-background)',
                             },
                             javascriptEnabled: true,
                         },
@@ -103,7 +103,7 @@ module.exports = {
     },
     plugins: [
         new MonacoWebpackPlugin({
-            languages: ['json'],
+            languages: ['javascript', 'json', 'html'],
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css?v=[contenthash:8]',
