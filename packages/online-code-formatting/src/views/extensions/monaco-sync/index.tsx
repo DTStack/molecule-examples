@@ -2,30 +2,33 @@ import molecule from '@dtinsight/molecule';
 import { IExtension } from '@dtinsight/molecule/esm/model/extension';
 import { editor as MonacoEditor } from '@dtinsight/molecule/esm/monaco';
 
+const leftPane = 1;
+const rightPane = 2;
+
+const sourceEditor = {
+    id: '1',
+    name: 'Source Code',
+    closable: false,
+    data: {
+        language: 'json',
+    },
+};
+
+const formattedEditor =  {
+    id: '2',
+    closable: false,
+    name: 'Formatted',
+    data: {
+        language: 'json',
+    },
+}
+
 export const ExtendsMonacoSync: IExtension = {
     id: 'ExtendDataSync',
     name: 'Data Sync',
     activate: async () => {
-        molecule.editor.open(
-            {
-                id: '1',
-                name: 'resource',
-                data: {
-                    language: 'json',
-                },
-            },
-            1
-        );
-        molecule.editor.open(
-            {
-                id: '2',
-                name: 'formatting',
-                data: {
-                    language: 'json',
-                },
-            },
-            2
-        );
+        molecule.editor.open(sourceEditor, leftPane);
+        molecule.editor.open(formattedEditor, rightPane);
         molecule.layout.toggleMenuBarVisibility();
         /**
          * TODO: it can cooperate with Pane to make some error prompts
