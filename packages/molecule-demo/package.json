@@ -18,9 +18,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.176"
+    "@types/lodash": "^4.14.176",
+    "react-app-rewired": "^2.1.8"
   }
 }
