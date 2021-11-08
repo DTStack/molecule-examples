@@ -1,16 +1,19 @@
-// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
 import { MoleculeProvider, Workbench } from '@dtinsight/molecule';
 import '@dtinsight/molecule/esm/style/mo.css';
 
-window.__DEVELOPMENT__ = false;
+import extensions from './extensions';
+
+(window as any).__DEVELOPMENT__ = false;
 
 function App() {
   return (
     <div className="App">
-      <MoleculeProvider extensions={[]}>
+       <MoleculeProvider extensions={extensions}>
             <Workbench />
-      </MoleculeProvider>
+        </MoleculeProvider>
     </div>
   );
 }
