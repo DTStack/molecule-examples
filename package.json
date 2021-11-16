@@ -6,6 +6,10 @@
   "author": "DTStack",
   "license": "MIT",
   "devDependencies": {
+    "@types/styled-components": "^5.1.15",
     "lerna": "^4.0.0"
+  },
+  "dependencies": {
+    "styled-components": "^5.3.3"
   }
 }
