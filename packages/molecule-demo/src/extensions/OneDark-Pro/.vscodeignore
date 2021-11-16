@@ -1,0 +1,20 @@
+!node_modules
+temp/flag.txt
+*.vsix
+
+# Source
+.github/
+.vscode/
+out/**/*.js.map
+scripts/
+scss/
+src/
+screenshots/
+
+# Dev config files
+.eslintignore
+.gitignore
+nodemon.json
+renovate.json
+**/tsconfig*.json
+
