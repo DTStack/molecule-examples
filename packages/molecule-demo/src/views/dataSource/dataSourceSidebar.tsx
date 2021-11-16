@@ -3,15 +3,16 @@ import molecule from '@dtinsight/molecule';
 import { Header, Content } from '@dtinsight/molecule/esm/workbench/sidebar';
 import { IActionBarItemProps, ITreeNodeItemProps } from '@dtinsight/molecule/esm/components';
 import { ICollapseItem } from '@dtinsight/molecule/esm/components/collapse';
+import { localize } from '@dtinsight/molecule/esm/i18n/localize';
 
 import API from '../../api';
 import DataSourceDetail from '../../components/dataSource/detail';
 import { openCreateDataSourceView } from '../../extensions/data-source/base';
 
+
 const Tree = molecule.component.TreeView;
 const Toolbar = molecule.component.Toolbar;
 const Collapse = molecule.component.Collapse;
-
 export class DataSourceSidebarView extends React.Component {
 
     state = {
@@ -95,7 +96,7 @@ export class DataSourceSidebarView extends React.Component {
     render() {
         return (
             <div className="dataSource" style={{width: '100%', height: '100%' }}>
-                <Header title="DataSource Management" toolbar={
+                <Header title={ localize('demo.dataSourceManagement', "DataSource Management") } toolbar={
                     <Toolbar data={this.renderHeaderToolbar()} />
                 }/>
                 <Content>

@@ -5,6 +5,7 @@ import { TerminalExtension } from './terminal';
 import { ProblemsExtension } from './problems';
 import { RunningExtension } from './running';
 import { OneDarkPro } from './OneDark-Pro/index';
+import { ExtendLocales } from './i18n';
 
 const extensions: IExtension[] = [
     new FirstExtension(),
@@ -13,6 +14,7 @@ const extensions: IExtension[] = [
     new ProblemsExtension(),
     new RunningExtension(),
     OneDarkPro,
+    ExtendLocales,
 ];
 
 export default extensions;
