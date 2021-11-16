@@ -1,5 +1,5 @@
 import molecule from '@dtinsight/molecule';
-import { Float, IEditor, IEditorTab, IFolderTreeNodeProps, IStatusBarItem } from '@dtinsight/molecule/esm/model';
+import { Float, IFolderTreeNodeProps } from '@dtinsight/molecule/esm/model';
 import { transformToEditorTab } from '../../common';
 
 import { cloneDeep } from 'lodash';
