@@ -20,6 +20,7 @@ export class FirstExtension implements IExtension {
     activate(extensionCtx: IExtensionService): void {
         folderTreeController.initFolderTree();
         folderTreeController.handleSelectFolderTree();
+        folderTreeController.handleStatusBarLanguage();
         searchPaneController.handleSearchEvent();
         searchPaneController.handleSelectSearchResult();
     }
