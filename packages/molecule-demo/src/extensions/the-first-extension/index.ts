@@ -3,6 +3,7 @@ import { IExtension } from '@dtinsight/molecule/esm/model/extension';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import * as folderTreeController from './folderTreeController';
 import * as searchPaneController from './searchPaneController';
+import { QuickOpenAction } from './quickOpenAction';
 
 export class FirstExtension implements IExtension {
 
@@ -23,6 +24,8 @@ export class FirstExtension implements IExtension {
         folderTreeController.handleStatusBarLanguage();
         searchPaneController.handleSearchEvent();
         searchPaneController.handleSelectSearchResult();
+        // Register the Action
+        extensionCtx.registerAction(QuickOpenAction);
     }
 
     dispose(extensionCtx: IExtensionService): void {

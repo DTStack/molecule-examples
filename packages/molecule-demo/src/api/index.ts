@@ -36,6 +36,24 @@ const api = {
                 data: dataSource
             })
         });
+    },
+
+    async query(query: string = '') {
+        const res = await http.get(`${basePath}/folderTree.json`);
+        const result: any[] = [];
+        const search = (nodeItem: any) => {
+            if (!nodeItem) return;
+            const target = nodeItem.name || '';
+            if (target.includes(query) || query.includes(target)) {
+                result.push(nodeItem);
+            }
+            if (nodeItem.children) {
+                nodeItem.children.forEach((item: any) => { search(item) })
+            }
+        }
+        search(res.data);
+
+        return result;
     }
 }
 
