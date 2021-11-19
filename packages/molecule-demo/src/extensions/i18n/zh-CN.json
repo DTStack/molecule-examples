@@ -3,6 +3,8 @@
     "name": "简体中文 - 自定义",
     "inherit": "zh-CN",
     "source": {
+        "menu.file": "任务",
+        "menu.newFile": "新建任务",
         "demo.running": "运行",
         "demo.dataSourceManagement": "数据源管理",
         "demo.terminal": "终端"
