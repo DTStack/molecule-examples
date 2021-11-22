@@ -1,10 +1,10 @@
 import { IExtension } from '@dtinsight/molecule/esm/model';
-import { DataSourceExtension } from './data-source';
-import { FirstExtension } from './the-first-extension';
+import { DataSourceExtension } from './dataSource';
+import { FirstExtension } from './theFirstExtension';
 import { TerminalExtension } from './terminal';
 import { ProblemsExtension } from './problems';
 import { RunningExtension } from './running';
-import { OneDarkPro } from './onedark-pro/index';
+import { OneDarkPro } from './oneDarkPro/index';
 import { ExtendLocales } from './i18n';
 import { SettingsExtension } from './settings';
 

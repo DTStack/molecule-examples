@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import API from '../../api';
 import { FormItem } from '../../components/formItem';
-import { existCreateDataSourceView } from '../../extensions/data-source/base';
+import { existCreateDataSourceView } from '../../extensions/dataSource/base';
 
 const Button = molecule.component.Button;
 

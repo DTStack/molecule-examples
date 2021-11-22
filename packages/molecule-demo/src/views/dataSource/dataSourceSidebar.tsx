@@ -7,7 +7,7 @@ import { localize } from '@dtinsight/molecule/esm/i18n/localize';
 
 import API from '../../api';
 import DataSourceDetail from '../../components/dataSource/detail';
-import { openCreateDataSourceView } from '../../extensions/data-source/base';
+import { openCreateDataSourceView } from '../../extensions/dataSource/base';
 
 
 const Tree = molecule.component.TreeView;
