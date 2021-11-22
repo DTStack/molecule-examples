@@ -12,9 +12,9 @@ export function MySidePaneView() {
     const renderHeaderToolbar = React.useCallback((): IActionBarItemProps[] =>  {
         return [
             {
-                icon: 'list-selection',
+                icon: 'editor-layout',
                 id: 'tools',
-                title: 'Tools',
+                title: 'Layout the right SidePane',
             }
         ]
     }, []);

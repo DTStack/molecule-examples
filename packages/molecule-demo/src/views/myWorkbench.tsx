@@ -105,7 +105,7 @@ function WorkbenchView(props: IWorkbench & ILayout & ILayoutController) {
                             {getContent(!!panel.panelMaximized, !!panel.hidden)}
                         </SplitPane>
                         <Pane
-                            minSize="170px"
+                            minSize="40px"
                             initialSize="240px"
                             maxSize="40%"
                             className={'rightSidebar'}
