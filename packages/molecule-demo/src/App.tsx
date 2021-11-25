@@ -15,8 +15,8 @@ function App() {
     <div className="App">
         <MoleculeProvider extensions={extensions}>
           <Routes>
-            <Route path="/" element={<Workbench />} />
-            <Route path="/myWorkbench" element={<MyWorkbench />} />
+            <Route path="/" element={<MyWorkbench />} />
+            <Route path="/vscode" element={<Workbench />} />
           </Routes>
         </MoleculeProvider>
     </div>
