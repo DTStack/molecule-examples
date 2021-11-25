@@ -1,7 +1,8 @@
-import { IActivityBarItem, IEditorTab, ISidebarPane } from '@dtinsight/molecule/esm/model';
+import { IActivityBarItem, IEditorTab, ISidebarPane, IMenuBarItem } from '@dtinsight/molecule/esm/model';
 import DataSourceView from '../../views/dataSource/dataSourceSidebar';
 import CreateDataSourceView from '../../views/dataSource/createDataSource';
 import molecule from '@dtinsight/molecule';
+import { localize } from '@dtinsight/molecule/esm/i18n/localize';
 
 export const DATA_SOURCE_ID = 'DataSource';
 
@@ -27,6 +28,12 @@ export const createDataSourceTab: IEditorTab = {
     renderPane: () => {
         return <CreateDataSourceView />;
     }
+}
+
+export const createDataSourceMenuItem: IMenuBarItem = {
+    id: 'menu.createDataSource',
+    name: localize('menu.createDataSource', 'Create Data Source'),
+    icon: ''
 }
 
 export function openCreateDataSourceView() {

@@ -1,10 +1,12 @@
 import React from 'react';
 import molecule from '@dtinsight/molecule';
 import styled from 'styled-components'
+import { container } from 'tsyringe';
 
 import API from '../../api';
 import { FormItem } from '../../components/formItem';
 import { existCreateDataSourceView } from '../../extensions/dataSource/base';
+import { NotificationController } from '@dtinsight/molecule/esm/controller';
 
 const Button = molecule.component.Button;
 
@@ -45,7 +47,16 @@ export class CreateDataSourceView extends React.Component {
 
         API.createDataSource(dataSource).then((res: any) => {
             if (res.code === 200) {
-                alert('Create data source succeed!');
+
+                molecule.notification.add([{
+                    id: 2,
+                    value: dataSource,
+                    render(item) {
+                        return <p>Create the Database <b>{item.value.name}</b> is success!</p>
+                    }
+                }]);
+                container.resolve(NotificationController).toggleNotifications();
+                // molecule.notification.toggleNotification(); // Invalid
             }
         });
     }

@@ -15,7 +15,7 @@ import { transformToEditorTab } from '../../common';
 
 export class QuickOpenAction extends Action2 {
 
-    static readonly ID = '';
+    static readonly ID = 'QuickOpenFile';
     static readonly LABEL = 'Search files by name';
 
     constructor() {
@@ -29,7 +29,7 @@ export class QuickOpenAction extends Action2 {
             keybinding: {
                 weight: KeybindingWeight.WorkbenchContrib,
                 when: undefined,
-                primary: KeyChord(KeyMod.Shift | KeyCode.KEY_S)
+                primary: KeyChord(KeyMod.CtrlCmd | KeyCode.KEY_P)
             },
         })
     }

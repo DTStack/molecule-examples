@@ -10,7 +10,6 @@ export function handleSelectSearchResult() {
 
 export function handleSearchEvent() {
     molecule.search.onSearch(async (value, replaceValue, config) => {
-        console.log('onSearch', value, replaceValue, config);
         if (!value) return;
 
         const res = await API.search(value);

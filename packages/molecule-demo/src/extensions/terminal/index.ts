@@ -5,16 +5,8 @@ import { terminalPanel } from './base';
 
 export class TerminalExtension implements IExtension {
 
-    id: string = '';
-    name: string = '';
-
-    constructor(
-        id: string = 'Terminal', 
-        name: string = 'Terminal'
-    ) {
-        this.id = id;
-        this.name = name;
-    }
+    id: string = 'Terminal';
+    name: string = 'Terminal';
 
     activate(extensionCtx: IExtensionService): void {
         molecule.panel.add(terminalPanel);
