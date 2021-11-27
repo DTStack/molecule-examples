@@ -1,7 +1,10 @@
 import { IExtension } from '@dtinsight/molecule/esm/model';
-import { InitExtension } from './init';
-import { TerminalExtension } from './terminal';
+import LayoutExtension from './layout';
+import TerminalExtension from './terminal';
 
-const extensions: IExtension[] = [new InitExtension(), new TerminalExtension()];
+const extensions: IExtension[] = [
+  new LayoutExtension(),
+  new TerminalExtension(),
+];
 
 export default extensions;

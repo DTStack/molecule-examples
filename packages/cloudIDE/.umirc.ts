@@ -4,7 +4,13 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  routes: [
+    { path: '/', component: '@/pages/index' },
+    {
+      path: '/workspace',
+      component: '@/pages/workspace',
+    },
+  ],
   fastRefresh: {},
   antd: {
     dark: true,

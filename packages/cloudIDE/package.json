@@ -25,7 +25,9 @@
     "@dtinsight/molecule": "^0.9.0-alpha.6",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.20"
+    "umi": "^3.5.20",
+    "xterm": "^4.15.0",
+    "xterm-addon-fit": "^0.5.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
