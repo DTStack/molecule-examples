@@ -1,9 +1,5 @@
 import molecule from '@dtinsight/molecule';
-import {
-  IContribute,
-  IExtension,
-  IExtensionType,
-} from '@dtinsight/molecule/esm/model';
+import { IExtension } from '@dtinsight/molecule/esm/model';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import Terminal from './Terminal';
 

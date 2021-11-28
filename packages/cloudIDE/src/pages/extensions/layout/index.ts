@@ -12,6 +12,7 @@ import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import { history } from 'umi';
 
 interface IDirProps {
+  uid: string;
   isLeaf: boolean;
   name: string;
   children: IDirProps[];
@@ -23,7 +24,7 @@ function convertToTreeModel(
 ): TreeNodeModel[] {
   return data.map((item) => {
     return new TreeNodeModel({
-      id: `${item.name}-${level}`,
+      id: item.uid,
       name: item.name,
       isLeaf: item.isLeaf,
       fileType: item.isLeaf ? FileTypes.File : FileTypes.Folder,
