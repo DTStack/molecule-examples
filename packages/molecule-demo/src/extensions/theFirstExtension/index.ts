@@ -4,6 +4,7 @@ import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import * as folderTreeController from './folderTreeController';
 import * as searchPaneController from './searchPaneController';
 import { QuickOpenAction } from './quickOpenAction';
+import molecule from '@dtinsight/molecule';
 
 export class FirstExtension implements IExtension {
 
@@ -25,7 +26,7 @@ export class FirstExtension implements IExtension {
         searchPaneController.handleSearchEvent();
         searchPaneController.handleSelectSearchResult();
         // Register the Action
-        extensionCtx.registerAction(QuickOpenAction);
+        molecule.extension.registerAction(QuickOpenAction);
     }
 
     dispose(extensionCtx: IExtensionService): void {

@@ -9,16 +9,8 @@ export const customSettings = {
 
 export class SettingsExtension implements IExtension {
 
-    id: string = '';
-    name: string = '';
-
-    constructor(
-        id: string = 'ExtendSettings', 
-        name: string = 'Extend Settings'
-    ) {
-        this.id = id;
-        this.name = name;
-    }
+    id: string = 'ExtendSettings';
+    name: string = 'Extend Settings';
 
     appendSettingsItems() {
         molecule.settings.append(customSettings);
@@ -29,7 +21,7 @@ export class SettingsExtension implements IExtension {
         molecule.settings.onChangeSettings((settings: any) => {
             panel.appendOutput('The settings changed: \n');
             panel.appendOutput(JSON.stringify(settings));
-            alert('Settings changed:' + settings.demo.id)
+            alert('Settings changed:' + settings.demo?.id)
         })
     }
 

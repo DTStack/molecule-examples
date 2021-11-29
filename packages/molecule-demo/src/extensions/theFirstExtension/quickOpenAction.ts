@@ -25,7 +25,7 @@ export class QuickOpenAction extends Action2 {
             title: QuickOpenAction.LABEL,
             alias: QuickOpenAction.LABEL,
             precondition: undefined,
-            f1: true,
+            f1: true, // Whether show the QuickOpenFile in Command Palette
             keybinding: {
                 weight: KeybindingWeight.WorkbenchContrib,
                 when: undefined,
@@ -64,5 +64,4 @@ export class QuickOpenAction extends Action2 {
         });
         quickPick.show();
     }
-
 }
