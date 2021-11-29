@@ -8,6 +8,7 @@ import { OneDarkPro } from './oneDarkPro/index';
 import { ExtendLocales } from './i18n';
 import { SettingsExtension } from './settings';
 import { MenuBarExtension } from './menubar/index';
+import { ActionExtension } from './action';
 
 const extensions: IExtension[] = [
     new FirstExtension(),
@@ -17,6 +18,7 @@ const extensions: IExtension[] = [
     new RunningExtension(),
     new SettingsExtension(),
     new MenuBarExtension(),
+    new ActionExtension(),
     OneDarkPro,
     ExtendLocales,
 
