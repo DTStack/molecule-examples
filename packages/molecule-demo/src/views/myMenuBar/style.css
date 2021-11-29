@@ -27,12 +27,12 @@
     min-width: auto;
 }
 
-.myMenuBar > .mo-menu--horizontal .mo-menu__content .mo-menu__label {
+.myMenuBar > .mo-menu--horizontal > .mo-menu__item > .mo-menu__content>.mo-menu__label {
     padding: 0 1em;
     flex: none;
     font-size: 12px;
 }
 
-.myMenuBar > .mo-menu--horizontal > .mo-menu__item .mo-menu__indicator {
+.myMenuBar > .mo-menu--horizontal > .mo-menu__item > .mo-menu__content> .mo-menu__indicator {
     display: none;
 }
