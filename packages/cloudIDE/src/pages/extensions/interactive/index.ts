@@ -1,3 +1,4 @@
+import { getLanguageByExt, getFileExt } from '@/utils';
 import molecule from '@dtinsight/molecule';
 import {
   IExtension,
@@ -42,6 +43,7 @@ export default class InteractiveExtension implements IExtension {
         molecule.editor.open({
           ...file,
           data: {
+            language: getLanguageByExt(getFileExt(file.name)),
             value: content,
           },
         });

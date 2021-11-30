@@ -64,6 +64,12 @@ export default () => {
     };
   }
 
+  function cancelTask() {
+    if (executing) {
+      ws.current?.send('molecule-EOL');
+    }
+  }
+
   function initTerminal() {
     const bgColor = window
       .getComputedStyle(document.documentElement)
@@ -153,6 +159,7 @@ export default () => {
             value: [],
             index: 0,
           };
+          cancelTask();
           break;
         }
         default: {

@@ -2,14 +2,13 @@ import { getCookie } from '@/utils';
 import molecule from '@dtinsight/molecule';
 import {
   FileTypes,
-  IContribute,
   IExtension,
-  IExtensionType,
   TreeNodeModel,
 } from '@dtinsight/molecule/esm/model';
 import { message } from 'antd';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import { history } from 'umi';
+import Icon, { getIconByName } from '@/pages/components/icon';
 
 interface IDirProps {
   uid: string;
@@ -28,6 +27,7 @@ function convertToTreeModel(
       name: item.name,
       isLeaf: item.isLeaf,
       fileType: item.isLeaf ? FileTypes.File : FileTypes.Folder,
+      icon: <Icon {...getIconByName(item.name)} />,
       children: convertToTreeModel(item.children, level + 1),
     });
   });
