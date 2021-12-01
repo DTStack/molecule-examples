@@ -1,10 +1,14 @@
-import { getLanguageByExt, getFileExt } from '@/utils';
+import { getLanguageByExt, getFileExt, convertToTreeModel } from '@/utils';
 import molecule from '@dtinsight/molecule';
 import {
   IExtension,
   IFolderTreeNodeProps,
+  TreeNodeModel,
 } from '@dtinsight/molecule/esm/model';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
+import { TreeViewUtil } from '@dtinsight/molecule/esm/common/treeUtil';
+import Icon from '@/pages/components/icon';
+import { getIconByName } from '@/pages/components/icon';
 
 function getFileContent(file: IFolderTreeNodeProps) {
   return fetch('/api/mo/getFileContent', {
@@ -32,6 +36,51 @@ function getStreamContent(body: ReadableStream<Uint8Array>): Promise<string> {
   return reader.read().then(processData);
 }
 
+function createNode() {
+  molecule.folderTree.onCreate((type, id) => {
+    if (type !== 'RootFolder') {
+      molecule.folderTree.add(
+        new TreeNodeModel({
+          id: 'input',
+          name: '',
+          fileType: type,
+          icon: 'file-code',
+          isLeaf: type === 'File',
+          isEditable: true,
+        }),
+        id,
+      );
+    }
+  });
+
+  molecule.folderTree.onUpdateFileName((file) => {
+    if (file.id === 'input') {
+      const { folderTree } = molecule.folderTree.getState();
+      const treeHelp = new TreeViewUtil(folderTree!.data![0]!);
+      const hashMap = treeHelp.getHashMap('input')!;
+      fetch('/api/mo/createFileOrFolder', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: file.name,
+          type: file.fileType,
+          parentId: hashMap.parent === 'dumi-root' ? undefined : hashMap.parent,
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.success) {
+            molecule.folderTree.remove('input');
+            const data = convertToTreeModel([res.data]);
+            molecule.folderTree.add(data[0], hashMap.parent);
+          }
+        });
+    }
+  });
+}
+
 export default class InteractiveExtension implements IExtension {
   id: string = 'interactive';
   name: string = 'interactive';
@@ -44,11 +93,15 @@ export default class InteractiveExtension implements IExtension {
           ...file,
           data: {
             language: getLanguageByExt(getFileExt(file.name)),
+            path: file.location,
             value: content,
+            ...(file.data || {}),
           },
         });
       }
     });
+
+    createNode();
   }
   dispose(extensionCtx: IExtensionService): void {
     throw new Error('Method not implemented.');

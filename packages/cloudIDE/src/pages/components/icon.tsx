@@ -58,6 +58,14 @@ export function getIconByName(fileName: string) {
   return { type: mdiLanguageJavascript, color: 'rgb(254,192,33)' };
 }
 
-export default ({ type, color }: { type: string; color: string }) => {
-  return <Icon path={type} size="18px" color={color} />;
+export default ({
+  type,
+  color,
+  size = '18px',
+}: {
+  type: string;
+  color: string;
+  size?: string;
+}) => {
+  return <Icon path={type} size={size} color={color} />;
 };

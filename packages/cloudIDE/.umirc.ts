@@ -1,4 +1,5 @@
 import { defineConfig } from 'umi';
+import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -14,6 +15,21 @@ export default defineConfig({
   fastRefresh: {},
   antd: {
     dark: true,
+  },
+  chainWebpack(memo, { env, webpack, createCSSRule }) {
+    memo.plugin('monaco-editor').use(MonacoWebpackPlugin, [
+      {
+        languages: [
+          'json',
+          'scss',
+          'less',
+          'css',
+          'javascript',
+          'typescript',
+          'markdown',
+        ],
+      },
+    ]);
   },
   proxy: {
     '/api': {

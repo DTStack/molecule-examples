@@ -1,37 +1,16 @@
-import { getCookie } from '@/utils';
+import { convertToTreeModel, getCookie } from '@/utils';
 import molecule from '@dtinsight/molecule';
 import {
   FileTypes,
+  Float,
   IExtension,
   TreeNodeModel,
 } from '@dtinsight/molecule/esm/model';
 import { message } from 'antd';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import { history } from 'umi';
-import Icon, { getIconByName } from '@/pages/components/icon';
-
-interface IDirProps {
-  uid: string;
-  isLeaf: boolean;
-  name: string;
-  children: IDirProps[];
-}
-
-function convertToTreeModel(
-  data: IDirProps[],
-  level: number = 0,
-): TreeNodeModel[] {
-  return data.map((item) => {
-    return new TreeNodeModel({
-      id: item.uid,
-      name: item.name,
-      isLeaf: item.isLeaf,
-      fileType: item.isLeaf ? FileTypes.File : FileTypes.Folder,
-      icon: <Icon {...getIconByName(item.name)} />,
-      children: convertToTreeModel(item.children, level + 1),
-    });
-  });
-}
+import Icon from '@/pages/components/icon';
+import { mdiSourceBranch } from '@mdi/js';
 
 function getTreeData() {
   fetch('/api/mo/getRepoDir', { method: 'GET' })
@@ -53,6 +32,28 @@ function getTreeData() {
     });
 }
 
+function getBranch() {
+  fetch('/api/mo/getBranch', { method: 'GET' })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.success) {
+        molecule.statusBar.add(
+          {
+            id: 'branch',
+            sortIndex: 0,
+            render: () => (
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Icon type={mdiSourceBranch} size="16px" color="#fff" />
+                {res.data}
+              </div>
+            ),
+          },
+          Float.left,
+        );
+      }
+    });
+}
+
 export default class LayoutExtension implements IExtension {
   id: string = 'layout';
   name: string = 'layout';
@@ -64,6 +65,7 @@ export default class LayoutExtension implements IExtension {
     }
 
     getTreeData();
+    getBranch();
   }
   dispose(extensionCtx: IExtensionService): void {
     throw new Error('Method not implemented.');

@@ -37,6 +37,7 @@
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.20",
     "lint-staged": "^10.0.7",
+    "monaco-editor-webpack-plugin": "3.0.1",
     "prettier": "^2.2.0",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
