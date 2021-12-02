@@ -1,14 +1,13 @@
 import { getLanguageByExt, getFileExt, convertToTreeModel } from '@/utils';
 import molecule from '@dtinsight/molecule';
 import {
+  IEditorTab,
   IExtension,
   IFolderTreeNodeProps,
   TreeNodeModel,
 } from '@dtinsight/molecule/esm/model';
 import { IExtensionService } from '@dtinsight/molecule/esm/services';
 import { TreeViewUtil } from '@dtinsight/molecule/esm/common/treeUtil';
-import Icon from '@/pages/components/icon';
-import { getIconByName } from '@/pages/components/icon';
 
 function getFileContent(file: IFolderTreeNodeProps) {
   return fetch('/api/mo/getFileContent', {
@@ -66,7 +65,9 @@ function createNode() {
         body: JSON.stringify({
           name: file.name,
           type: file.fileType,
-          parentId: hashMap.parent === 'dumi-root' ? undefined : hashMap.parent,
+          parentId: hashMap.parent?.endsWith('-root')
+            ? undefined
+            : hashMap.parent,
         }),
       })
         .then((res) => res.json())
@@ -87,7 +88,25 @@ export default class InteractiveExtension implements IExtension {
   activate(extensionCtx: IExtensionService): void {
     molecule.folderTree.onSelectFile(async (file) => {
       const body = await getFileContent(file);
+      const IMAGES_EXTS = ['jpg', 'gif', 'jpeg', 'png'];
+      const isImages = IMAGES_EXTS.some((ext) => file.name?.endsWith(ext));
       if (body) {
+        if (isImages) {
+          const response = new Response(body);
+          const blob = await response.blob();
+          const url = await URL.createObjectURL(blob);
+          const tab: IEditorTab<any> = {
+            ...file,
+            data: {
+              language: getLanguageByExt(getFileExt(file.name)),
+              path: file.location,
+              value: url,
+              ...(file.data || {}),
+            },
+            renderPane: () => <img src={url} />,
+          };
+          molecule.editor.open(tab);
+        } else {
         const content = await getStreamContent(body);
         molecule.editor.open({
           ...file,
@@ -98,6 +117,7 @@ export default class InteractiveExtension implements IExtension {
             ...(file.data || {}),
           },
         });
+        }
       }
     });
 
