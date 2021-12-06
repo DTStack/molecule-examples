@@ -5,8 +5,8 @@
     "static/js/1.a9ae2020.chunk.js": "/molecule-examples/static/js/1.a9ae2020.chunk.js",
     "static/js/1.a9ae2020.chunk.js.map": "/molecule-examples/static/js/1.a9ae2020.chunk.js.map",
     "main.css": "/molecule-examples/static/css/main.4e70894b.chunk.css",
-    "main.js": "/molecule-examples/static/js/main.f2a4da7a.chunk.js",
-    "main.js.map": "/molecule-examples/static/js/main.f2a4da7a.chunk.js.map",
+    "main.js": "/molecule-examples/static/js/main.60cae339.chunk.js",
+    "main.js.map": "/molecule-examples/static/js/main.60cae339.chunk.js.map",
     "runtime-main.js": "/molecule-examples/static/js/runtime-main.4be9da16.js",
     "runtime-main.js.map": "/molecule-examples/static/js/runtime-main.4be9da16.js.map",
     "static/css/4.18d216d1.chunk.css": "/molecule-examples/static/css/4.18d216d1.chunk.css",
@@ -193,6 +193,6 @@
     "static/css/4.18d216d1.chunk.css",
     "static/js/4.aaa73234.chunk.js",
     "static/css/main.4e70894b.chunk.css",
-    "static/js/main.f2a4da7a.chunk.js"
+    "static/js/main.60cae339.chunk.js"
   ]
 }
