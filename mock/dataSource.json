@@ -1,0 +1,62 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "id": 0,
+        "name": "DataSource",
+        "fileType": "RootFolder",
+        "isLeaf": false,
+        "data": "",
+        "children": [
+            {
+                "id": 5,
+                "name": "Relations",
+                "isLeaf": false,
+                "fileType": "Folder",
+                "children": [{
+                    "id": 11,
+                    "name": "database1.mysql",
+                    "icon": "database",
+                    "fileType": "File",
+                    "isLeaf": true
+                }, {
+                    "id": 12,
+                    "icon": "database",
+                    "name": "database2.oracle",
+                    "isLeaf": true
+                }, {
+                    "id": 13,
+                    "icon": "database",
+                    "name": "database3.postgresql",
+                    "isLeaf": true,
+                    "fileType": "File"
+                }]
+            },
+            {
+                "id": 1,
+                "name": "source1",
+                "icon": "database",
+                "fileType": "File",
+                "isLeaf": true
+            }, {
+                "id": 2,
+                "name": "source2",
+                "icon": "database",
+                "fileType": "File",
+                "isLeaf": true
+            }, {
+                "id": 3,
+                "icon": "database",
+                "name": "source3",
+                "fileType": "File",
+                "isLeaf": true
+            }, {
+                "id": 4,
+                "name": "source4",
+                "icon": "database",
+                "fileType": "File",
+                "isLeaf": true
+            }
+        ]
+    }
+}
