@@ -12,7 +12,7 @@ import { history } from 'umi';
 import Icon from '@/pages/components/icon';
 import { mdiSourceBranch } from '@mdi/js';
 
-function getTreeData() {
+export function getTreeData() {
   fetch('/api/mo/getRepoDir', { method: 'GET' })
     .then((res) => res.json())
     .then((res) => {
@@ -25,7 +25,12 @@ function getTreeData() {
           isLeaf: false,
           children: convertToTreeModel(res.data),
         });
-        molecule.folderTree.add(root);
+        const rootNode = molecule.folderTree.get(`${repo}-root`);
+        if (rootNode) {
+          molecule.folderTree.update(root);
+        } else {
+          molecule.folderTree.add(root);
+        }
       } else {
         message.error(res.message);
       }

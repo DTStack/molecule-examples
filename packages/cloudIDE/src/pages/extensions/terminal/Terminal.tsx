@@ -3,6 +3,7 @@ import { useLayoutEffect, useMemo, useRef } from 'react';
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 import 'xterm/css/xterm.css';
+import { getTreeData } from '../layout';
 
 const blue = (str: string) => `\x1b[34m${str}\x1b[0m`;
 const green = (str: string) => `\x1b[32m${str}\x1b[0m`;
@@ -49,6 +50,7 @@ export default () => {
         if (e.data === 'molecule-EOL') {
           executing.current = false;
           terminal.current.write(PREFIX);
+          getTreeData();
         } else {
           terminal.current.write(e.data);
         }
