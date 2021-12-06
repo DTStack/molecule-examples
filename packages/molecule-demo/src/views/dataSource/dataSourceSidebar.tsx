@@ -49,7 +49,7 @@ export class DataSourceSidebarView extends React.Component {
 
     selectedSource = (node: ITreeNodeItemProps) => {
         if (node.isLeaf) {
-            this.fetchDataSource(node.id);
+            this.fetchDataSource(node.id as string);
         }
     }
 

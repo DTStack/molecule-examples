@@ -1268,17 +1268,18 @@
     lodash "^4.17.21"
     standard-version "^9.3.1"
 
-"@dtinsight/molecule@^0.9.0-alpha.6":
-  version "0.9.0-alpha.6"
-  resolved "https://registry.npmjs.org/@dtinsight/molecule/-/molecule-0.9.0-alpha.6.tgz#ac387fa24b8874a1cee5a6075bf46c302298fb8f"
-  integrity sha512-9L8ZMTqtWP+9vZQMMsL4EKmSCOaorAHVNFPyqxdskZ47UjOkYLAtG+XulW4dUTDBqiisnwUfH7HSUXazJO7lAw==
+"@dtinsight/molecule@^0.9.0-beta.1":
+  version "0.9.0-beta.1"
+  resolved "https://registry.npmjs.org/@dtinsight/molecule/-/molecule-0.9.0-beta.1.tgz#cda3dce1d46a1189c191b4f27e5e9bef4b8d68cb"
+  integrity sha512-81xRvx+fHWGmksqSE9h4CmR/PnDWhCdaz7FEi7/dp0gFjlvd6TgpE+ubvSeqS6fKtryAI8H8CuuKbxtvHWw+EA==
   dependencies:
     "@dtinsight/dt-utils" "^1.0.3"
     "@types/react" "^17.0.3"
     "@types/react-dom" "^17.0.3"
+    "@vscode/codicons" "^0.0.26"
     immutability-helper "^3.1.1"
     lodash "^4.17.21"
-    monaco-editor "^0.23.0"
+    monaco-editor "^0.30.1"
     rc-dialog "8.2.1"
     rc-textarea "~0.3.1"
     rc-tooltip "^5.1.1"
@@ -1289,7 +1290,6 @@
     react-split-pane "^2.0.3"
     reflect-metadata "^0.1.13"
     tsyringe "4.5.0"
-    vscode-codicons "^0.0.12"
 
 "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
@@ -2239,6 +2239,11 @@
   dependencies:
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
+
+"@vscode/codicons@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.npmjs.org/@vscode/codicons/-/codicons-0.0.26.tgz#affdbc4499d3bd0db1156e4c9d323f885d299e03"
+  integrity sha512-GrYFJPbZ+hRM3NUVdAIpDepWkYCizVb13a6pJDAhckElDvaf4UCmNpuBS4MSydXNK63Ccts0XpvJ6JOW+/aU1g==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -8231,17 +8236,17 @@ modify-values@^1.0.0:
   resolved "https://registry.npmjs.org/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-monaco-editor-webpack-plugin@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/monaco-editor-webpack-plugin/-/monaco-editor-webpack-plugin-3.0.1.tgz#b9bf93314eb2708907c232cfbf359622e7a6d98a"
-  integrity sha512-Hym4HqWgIpyoi9G0spln/b/7rkDKfYwIOrNzo1fHHMc+MLYSwD1JXHwKSDS77X27ZHfVJsEXbMZYdGhSYuVF0w==
+monaco-editor-webpack-plugin@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/monaco-editor-webpack-plugin/-/monaco-editor-webpack-plugin-6.0.0.tgz#628956ce1851afa2a5f6c88d0ecbb24e9a444898"
+  integrity sha512-vC886Mzpd2AkSM35XLkfQMjH+Ohz6RISVwhAejDUzZDheJAiz6G34lky1vyO8fZ702v7IrcKmsGwL1rRFnwvUA==
   dependencies:
     loader-utils "^2.0.0"
 
-monaco-editor@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.23.0.tgz#24844ba5640c7adb3a2a3ff3b520cf2d7170a6f0"
-  integrity sha512-q+CP5zMR/aFiMTE9QlIavGyGicKnG2v/H8qVvybLzeFsARM8f6G9fL0sMST2tyVYCwDKkGamZUI6647A0jR/Lg==
+monaco-editor@^0.30.1:
+  version "0.30.1"
+  resolved "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.30.1.tgz#47f8d18a0aa2264fc5654581741ab8d7bec01689"
+  integrity sha512-B/y4+b2O5G2gjuxIFtCE2EkM17R2NM7/3F8x0qcPsqy4V83bitJTIO4TIeZpYlzu/xy6INiY/+84BEm6+7Cmzg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -12283,11 +12288,6 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-
-vscode-codicons@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.npmjs.org/vscode-codicons/-/vscode-codicons-0.0.12.tgz#94b867156f3e3a6a4cf7661e9bf2bd0060042390"
-  integrity sha512-CyGFDf3OmQhtBql/BFheUAlvEZ1MKAgvyCrGktGXEsqYvK5m9456kckDTNvnEAGG8gYjE2ds5O1cle82sMgmAg==
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"

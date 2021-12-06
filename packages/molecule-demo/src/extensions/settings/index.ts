@@ -1,5 +1,6 @@
 import molecule from '@dtinsight/molecule';
-import { IExtension, IExtensionService } from '@dtinsight/molecule/esm/molecule.api';
+import { IExtension } from '@dtinsight/molecule/esm/model';
+import { IExtensionService } from '@dtinsight/molecule/esm/molecule.api';
 
 export const customSettings = {
     demo: {

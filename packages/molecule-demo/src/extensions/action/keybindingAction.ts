@@ -15,7 +15,7 @@ export class KeybindingAction extends Action2 {
             keybinding: {
                 weight: KeybindingWeight.WorkbenchContrib,
                 when: undefined,
-                primary: KeyChord(KeyMod.CtrlCmd | KeyCode.KEY_S)
+                primary: KeyChord(KeyMod.CtrlCmd | KeyCode.KeyS)
             },
         })
     }

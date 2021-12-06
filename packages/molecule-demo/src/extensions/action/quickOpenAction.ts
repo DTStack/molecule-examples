@@ -29,7 +29,7 @@ export class QuickOpenAction extends Action2 {
             keybinding: {
                 weight: KeybindingWeight.WorkbenchContrib,
                 when: undefined,
-                primary: KeyChord(KeyMod.CtrlCmd | KeyCode.KEY_P)
+                primary: KeyChord(KeyMod.CtrlCmd | KeyCode.KeyP)
             },
         })
     }
