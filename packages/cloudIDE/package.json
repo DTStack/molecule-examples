@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "cloud-ide",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
