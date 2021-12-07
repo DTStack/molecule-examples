@@ -1,6 +1,6 @@
 import http from "../common/http";
 
-const basePath = '/mock';
+const basePath = './mock';
 
 const api = {
     getFolderTree() {
