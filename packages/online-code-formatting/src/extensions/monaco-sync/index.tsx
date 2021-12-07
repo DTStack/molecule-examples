@@ -1,11 +1,12 @@
 import molecule from '@dtinsight/molecule';
+import { IEditorTab } from '@dtinsight/molecule/esm/model';
 import { IExtension } from '@dtinsight/molecule/esm/model/extension';
 import { editor as MonacoEditor } from '@dtinsight/molecule/esm/monaco';
 
 const leftPane = 1;
 const rightPane = 2;
 
-const sourceEditor = {
+const sourceEditor: IEditorTab = {
     id: '1',
     name: 'Source Code',
     closable: false,
@@ -14,7 +15,7 @@ const sourceEditor = {
     },
 };
 
-const formattedEditor =  {
+const formattedEditor: IEditorTab =  {
     id: '2',
     closable: false,
     name: 'Formatted',
@@ -40,14 +41,14 @@ export const ExtendsMonacoSync: IExtension = {
         const editor = await new Promise<MonacoEditor.IStandaloneCodeEditor>(
             (resolve) => {
                 setTimeout(() => {
-                    resolve(molecule.editor.getGroupById(1).editorInstance);
+                    resolve(molecule.editor.getGroupById(1)?.editorInstance);
                 });
             }
         );
         const formattingEditor =
             await new Promise<MonacoEditor.IStandaloneCodeEditor>((resolve) => {
                 setTimeout(() => {
-                    resolve(molecule.editor.getGroupById(2).editorInstance);
+                    resolve(molecule.editor.getGroupById(2)?.editorInstance);
                 });
             });
 
