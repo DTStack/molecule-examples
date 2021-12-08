@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { MoleculeProvider, Workbench } from '@dtinsight/molecule';
 import '@dtinsight/molecule/esm/style/mo.css';

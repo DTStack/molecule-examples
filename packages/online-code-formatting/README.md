@@ -1,8 +1,16 @@
-# Getting Started with Create React App
+# online-code-formatting
+A simple **online code formatting** tool built with [Molecule](https://github.com/DTStack/molecule).
+
+## Support Languages
+
+- JSON
+- Javascript (TODO)
+- SQL (TODO)
+- XML (TODO)
+
+## Development
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
