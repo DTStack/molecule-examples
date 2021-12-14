@@ -9,6 +9,7 @@ import { ExtendLocales } from './i18n';
 import { SettingsExtension } from './settings';
 import { MenuBarExtension } from './menubar/index';
 import { ActionExtension } from './action';
+import { GoToGithubExtension } from './github';
 
 const extensions: IExtension[] = [
     new FirstExtension(),
@@ -19,6 +20,7 @@ const extensions: IExtension[] = [
     new SettingsExtension(),
     new MenuBarExtension(),
     new ActionExtension(),
+    GoToGithubExtension,
     OneDarkPro,
     ExtendLocales,
 
