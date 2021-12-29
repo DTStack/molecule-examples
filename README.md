@@ -6,6 +6,7 @@ The examples showing how to integrate or use the [Molecule](https://github.com/D
 ## Examples 
 
 - [molecule-demo](./packages/molecule-demo)
+- [cloud-ide](https://github.com/mortalYoung/cloud-ide)
 - [online-code-formatting](https://github.com/wewoor/online-code-formatting)
 - [monaco-sql-languages](https://github.com/DTStack/monaco-sql-languages)
 - [online-markdown-preview](https://github.com/kiwiwong/online-markdown-preview)
