@@ -19,17 +19,17 @@ export class MenuBarExtension implements IExtension {
     }
 
     initUI() {
-        // TODO: upgrade the Molecule and remove it.
-        const { builtInMenuBarData } = molecule.builtin.getModules();
-        setTimeout(() => { 
-            molecule.menuBar.setMenus([...builtInMenuBarData, vscodeMenuItem ]);
-        });
+        const { data } = molecule.menuBar.getState();
+        const nextData = data.concat();
+        nextData.push(vscodeMenuItem);
 
+        molecule.menuBar.setState({ data: nextData });
         molecule.menuBar.onSelect((menuId) => {
             if (menuId === vscodeMenuItem.id) {
                 window.location.href = '#/vscode';
             }
-        })
+        });
+        molecule.layout.setMenuBarMode('horizontal');
     }
 
     dispose() {
