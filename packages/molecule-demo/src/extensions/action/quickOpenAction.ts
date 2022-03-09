@@ -1,5 +1,6 @@
-import { Action2, KeybindingWeight } from "@dtinsight/molecule/esm/monaco/common";
+import { KeybindingWeight } from "@dtinsight/molecule/esm/monaco/common";
 import { KeyCode, KeyMod } from "@dtinsight/molecule/esm/monaco";
+import { Action2 } from '@dtinsight/molecule/esm/monaco/action';
 import {
     IQuickInputService,
     //@ts-ignore
