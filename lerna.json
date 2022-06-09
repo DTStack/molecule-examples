@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/*"
+    "molecule-demo"
   ],
   "version": "independent",
   "npmClient": "yarn"
