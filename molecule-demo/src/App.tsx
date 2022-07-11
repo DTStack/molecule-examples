@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 
-import { MoleculeProvider, Workbench } from '@dtinsight/molecule';
+import { create, Workbench } from '@dtinsight/molecule';
 import '@dtinsight/molecule/esm/style/mo.css';
 
 import extensions from './extensions';
@@ -18,16 +18,21 @@ function NotFound() {
   )
 }
 
+const moleculeInst = create({
+  extensions,
+})
+
+const DefaultWorkbench = () => moleculeInst.render(<Workbench />)
+const CustomWorkbench = () => moleculeInst.render(<MyWorkbench />)
+
 function App() {
   return (
     <div className="App">
-        <MoleculeProvider extensions={extensions}>
           <Routes>
-            <Route path="/" element={<MyWorkbench />} />
-            <Route path="vscode" element={<Workbench />} />
+            <Route path="/" element={<CustomWorkbench />} />
+            <Route path="vscode" element={<DefaultWorkbench />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </MoleculeProvider>
     </div>
   );
 }

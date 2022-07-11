@@ -1268,10 +1268,10 @@
     lodash "^4.17.21"
     standard-version "^9.3.1"
 
-"@dtinsight/molecule@^0.9.0-beta.4.2":
-  version "0.9.0-beta.4.2"
-  resolved "https://registry.npmmirror.com/@dtinsight/molecule/-/molecule-0.9.0-beta.4.2.tgz#3659ae2c9896067af1197056546738d2c403a076"
-  integrity sha512-X+NtZiPFDUATyXDYcmQ9a5+1/y8AN+/4/fHHiJxfxCCAIW9FD4KJNBWE4H2ZVePOGGRsado7bbxYcvsiiX8ysQ==
+"@dtinsight/molecule@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@dtinsight/molecule/-/molecule-1.0.2.tgz#f8205cbc6e819e74193cb4cba39784d62c74233e"
+  integrity sha512-GajhFlNL56LGcq8KcyAVmSA+KXpCdpKpdH91ORh8bnS7w6YCu0owFJcN4FG/6JSbdPH3rUWpYPkk+A7N65V8Xg==
   dependencies:
     "@dtinsight/dt-utils" "^1.0.3"
     "@types/react" "^17.0.3"
